@@ -1,3 +1,3 @@
 #!bin/bash
 
-grep . 
+ls | grep -c ""

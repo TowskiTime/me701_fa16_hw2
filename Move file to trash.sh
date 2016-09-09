@@ -1,8 +1,15 @@
 #!/bin/bash
-mkdir Trash
+
 
 echo "File Name"
 read FileName
 
+if [ ! -d "Trash" ]; then
+	mkdir Trash
+fi
 
-mv "./$FileName" "Trash" #automatically provides an error message in the event there is no file or directory
+if [ -f "$FileName" ]; then
+	mv "./$FileName" "Trash"
+else
+	echo "File name does not exist in this directory."
+fi 
